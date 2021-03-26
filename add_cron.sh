@@ -16,6 +16,7 @@ else
 			no ) exit;;
 		esac
 	done
+fi
 # change directories to the repo
 cd cron_stuff
 #cron stuff
