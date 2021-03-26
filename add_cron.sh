@@ -3,7 +3,8 @@
 # make $tmpfile
 tmpfile=$(mktemp)
 #create directory to store the scripts
-mkdir /home/$USER/Downloads/scripts
+mkdir /home/$USER/.scripts
+cd /home/$USER/.scripts
 #ensure git is installed, and install if not
 if git --version ; then
 	git clone https://github.com/NeoMakazo/cron_stuff.git
@@ -20,6 +21,6 @@ cd cron_stuff
 #cron stuff
 crontab -l > $tmpfile
 chmod +x *
-echo "@daily cd /home/$USER/Downloads/scripts/cron_stuff && sh auto-cron.sh" >> $tmpfile
+echo "@daily cd /home/$USER/.scripts/cron_stuff && sh auto-cron.sh" >> $tmpfile
 crontab $tmpfile
 rm $tmpfile
